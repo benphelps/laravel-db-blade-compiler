@@ -76,7 +76,7 @@ class DbView extends \Illuminate\View\View implements ArrayAccess, Renderable
         // done rendering all views so that there is nothing left hanging over when
         // anothoer view is rendered in the future by the application developers.
         // Lumen version checks are broken, so assume we're using the latest API.
-        View::flushSectionsIfDoneRendering();
+        View::flushStateIfDoneRendering();
 
         return $response ?: $contents;
     }
